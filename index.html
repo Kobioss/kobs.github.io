@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Powered by kobios</title>
+<link rel="icon" type="image/x-icon" href="icone.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+
+<div class="defilement"></div>
+
+<div class="popup" id="popup">
+<div class="popup-encart"></div>
+<h1 class="popup-contenu">Seulement aux membres de la salle 102...<br/></h1>
+<input class="popup-contenu" id="password" type="password" placeholder="password"/>
+<input class="popup-contenu" id="Button1" type="button" value="Ok" onclick="passcheck()" />
+</div>
+
+<div id="compteur">
+<label>Vote&nbsp;&nbsp;&nbsp;</label>
+<button onclick="count(this.id)" id="minus">-</button>
+<label id="counter">0</label>
+<button onclick="count(this.id)" id="plus">+</button>
+<button onclick="save(this.id)" id="save" title="Un fichier sera télécharger.">Enregistrer</button>
+<!-- <button onclick="restore(this.id)" id="restore">Restaurer</button> -->
+</div>
+
+<h2>Centre: Haouchine aissa</br>Salle 102</br>Homme</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Rechercher ..." title="By kobios">
+
+<table id="myTable">
+   
+<thead><tr class="tableizer-firstrow"><th>Id</th><th>Page</th><th id="nom">Nom/Prénom</th><th id="num">Numéro</th><th id="date">Date</th><th>Lieu</th><th>Adresse</th></tr></thead>
+<tbody>
+ <tr ><td>1</td><td>1</td><td>Bahlouli Messaoud</td><td>2264</td><td>05/11/1960</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>2</td><td>1</td><td>Belkasmi Ali</td><td>2834</td><td>19/01/1971</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>3</td><td>1</td><td>Benaissa Slimane</td><td>3146</td><td>07/08/1938</td><td>Aïn Bessem </td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>4</td><td>1</td><td>Benamrouche Toufik</td><td>3228</td><td>09/01/1971</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>5</td><td>1</td><td>Bendaoui Mohamed</td><td>3419</td><td>11/04/1968</td><td>Bouira</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>6</td><td>1</td><td>Benhaffaf Rachid</td><td>3538</td><td>01/08/1961</td><td>&nbsp;</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>7</td><td>1</td><td>Benmahiddine Seghir</td><td>3702</td><td>31/12/1940</td><td>Tizi Ouzou</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>8</td><td>1</td><td>Benmedjadji Benmalek</td><td>3732</td><td>00/00/1936</td><td>Ouled Maaref</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>9</td><td>2</td><td>Benserradj Abdelkrim</td><td>3892</td><td>26/01/1970</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>10</td><td>2</td><td>Benyoucef Moussa</td><td>4067</td><td>29/06/1972</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>11</td><td>2</td><td>Benyoucef Tahar</td><td>4072</td><td>26/03/1972</td><td>Hussein-Dey </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>12</td><td>2</td><td>Berrahmoune Ahmed</td><td>4238</td><td>10/11/1950</td><td>Guerrouma </td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>13</td><td>2</td><td>Betil Ahmed</td><td>4288</td><td>23/08/1969</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>14</td><td>2</td><td>Betil Moahmed</td><td>4290</td><td>18/09/1952</td><td>Ksar El Boukhari</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>15</td><td>2</td><td>Bouchareb Ahmed</td><td>4631</td><td>00/00/1961</td><td>Maala</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>16</td><td>2</td><td>Boumehira Moahmed</td><td>5340</td><td>13/04/1955</td><td>&nbsp;</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>17</td><td>3</td><td>Bouricha Abdelkader</td><td>5550</td><td>12/10/1961</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>18</td><td>3</td><td>Bournissa Ahcene</td><td>5564</td><td>17/01/1967</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>19</td><td>3</td><td>Bournissa Kebir</td><td>5567</td><td>24/01/1940</td><td>El-Harrach</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>20</td><td>3</td><td>Bousbaa Ali</td><td>5660</td><td>24/12/1965</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>21</td><td>3</td><td>Bousbaa Benazize</td><td>5700</td><td>01/11/1963</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>22</td><td>3</td><td>Bousbaa Hamoud</td><td>5708</td><td>26/11/1964</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>23</td><td>3</td><td>Braneci Abdelnacer</td><td>5114</td><td>06/06/1958</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>24</td><td>3</td><td>Kouider Omar</td><td>12237</td><td>01/07/1948</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>25</td><td>4</td><td>Lekkat Boualem</td><td>13064</td><td>21/04/1969</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>26</td><td>4</td><td>Ouzenadji Krimou</td><td>16278</td><td>03/06/1965</td><td>El-Harrach</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>27</td><td>4</td><td>Sefsaf Rachid</td><td>17502</td><td>26/05/1970</td><td>Tidjelabine</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>28</td><td>4</td><td>Salmi Youcef</td><td>17692</td><td>00/00/1961</td><td>Tiffech</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>29</td><td>4</td><td>Senouci Mohamed</td><td>17767</td><td>19/10/1958</td><td>Bouira</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>30</td><td>4</td><td>Si abdellah Abdelkader</td><td>17858</td><td>13/04/1970</td><td>El-Harrach</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>31</td><td>4</td><td>Si abdellah Driss</td><td>17860</td><td>06/09/1963</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>32</td><td>4</td><td>Si abdellah Tahar</td><td>17863</td><td>29/09/1927</td><td>Chlef</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>33</td><td>5</td><td>Si abdellah Mohamed</td><td>17884</td><td>24/02/1957</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>34</td><td>5</td><td>Sini Ali</td><td>17934</td><td>06/11/1959</td><td>Aïn Bessem </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>35</td><td>5</td><td>Sitouah Hammoud</td><td>17964</td><td>30/09/1945</td><td>Yesser</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>36</td><td>5</td><td>Bensitouah Ahmed</td><td>17965</td><td>07/01/1969</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>37</td><td>5</td><td>Slimane Nour eddine</td><td>18006</td><td>04/11/1959</td><td>Sidi M'Hamed</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>38</td><td>5</td><td>Taieb Mustapha</td><td>18536</td><td>17/04/1957</td><td>Bouira</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>39</td><td>5</td><td>Taleb Abdelmalek</td><td>18577</td><td>24/09/1969</td><td>Hussein-Dey </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>40</td><td>5</td><td>Taleb Mustapha</td><td>18597</td><td>17/06/1972</td><td>Gouraya</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>41</td><td>6</td><td>Taleb Rabah</td><td>18600</td><td>20/06/1944</td><td>Tamezret</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>42</td><td>6</td><td>Taleb Rachid</td><td>18602</td><td>02/03/1952</td><td>Afir</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>43</td><td>6</td><td>taleb Said</td><td>18605</td><td>08/02/1971</td><td>El-Harrach</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>44</td><td>6</td><td>Taoutaoui Aissa</td><td>18671</td><td>08/10/1947</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>45</td><td>6</td><td>Tchina Smail</td><td>18750</td><td>02/11/1964</td><td>&nbsp;</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>46</td><td>6</td><td>Tobdji Boualem</td><td>18975</td><td>15/02/1959</td><td>Lakhdaria</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>47</td><td>6</td><td>Tobdji Essaid</td><td>18976</td><td>06/07/1945</td><td>Lakhdaria </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>48</td><td>6</td><td>Touati Arezki</td><td>19015</td><td>31/12/1930</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>49</td><td>7</td><td>Touati Boualem</td><td>19017</td><td>16/08/1963</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>50</td><td>7</td><td>Touati Mahdi</td><td>19021</td><td>29/01/1959</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>51</td><td>7</td><td>Touati Mustapha</td><td>19024</td><td>11/06/1961</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>52</td><td>7</td><td>Touati Rachid</td><td>19027</td><td>20/11/1955</td><td>Si Mustapha</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>53</td><td>7</td><td>Toubal Ahmed</td><td>19031</td><td>08/02/1965</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>54</td><td>7</td><td>Toubal Said</td><td>19050</td><td>00/00/1938</td><td>Bordj Bou Arreridj</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>55</td><td>7</td><td>Yahi Ahmed</td><td>19229</td><td>11/04/1958</td><td>Sidi Aissa</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>56</td><td>7</td><td>Yahi Omar</td><td>19239</td><td>09/12/1965</td><td>Rouiba</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>57</td><td>8</td><td>Yahyaoui Lakhdar</td><td>19263</td><td>00/00/1954</td><td>Aïn El Melh</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>58</td><td>8</td><td>Yassa Said</td><td>19373</td><td>11/07/1952</td><td>Draâ El Mizan</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>59</td><td>8</td><td>Youcefi Boualem</td><td>19393</td><td>21/01/1951</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>60</td><td>8</td><td>Youcefi Djillali</td><td>19394</td><td>28/03/1969</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>61</td><td>8</td><td>Youcefi Mohamed</td><td>19398</td><td>04/04/1965</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>62</td><td>8</td><td>Youcefi Mohamed</td><td>19400</td><td>27/05/1968</td><td>Aïn El Melh</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>63</td><td>8</td><td>Youcefi Mustapha</td><td>19402</td><td>30/01/1965</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>64</td><td>8</td><td>Youcefi Said</td><td>19404</td><td>01/05/1953</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>65</td><td>9</td><td>Zamouni Mohamed</td><td>19491</td><td>31/12/1940</td><td>Aïn El Hadjel</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>66</td><td>9</td><td>Zbib Brahim</td><td>19552</td><td>27/07/1947</td><td>Aïn Taya</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>67</td><td>9</td><td>Zbib Hamoud</td><td>19555</td><td>27/05/1969</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>68</td><td>9</td><td>Zbib Mokhtar</td><td>19557</td><td>15/02/1969</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>69</td><td>9</td><td>Zbib Rachid</td><td>19559</td><td>28/07/1952</td><td>&nbsp;</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>70</td><td>9</td><td>Zbib Hocine</td><td>19562</td><td>15/06/1943</td><td>&nbsp;</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>71</td><td>9</td><td>Zbib Mohamed</td><td>19563</td><td>08/01/1965</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>72</td><td>9</td><td>Zemoul Ali</td><td>19678</td><td>09/03/1949</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>73</td><td>10</td><td>Zenikheri Ahmed</td><td>19717</td><td>15/02/1960</td><td>Laghouat </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>74</td><td>10</td><td>Zenikheri Hocine</td><td>19719</td><td>07/10/1965</td><td>Laghouat </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>75</td><td>10</td><td>Zanouni Mohamed</td><td>19732</td><td>06/01/1971</td><td>Medjedel</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>76</td><td>10</td><td>Zouane abdelhak</td><td>20014</td><td>27/07/1962</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>77</td><td>10</td><td>Bellal Ali</td><td>20442</td><td>15/03/1966</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>78</td><td>10</td><td>Doudah Djamel</td><td>20504</td><td>20/03/1973</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>79</td><td>10</td><td>Melloul Omar</td><td>20521</td><td>01/01/1968</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>80</td><td>10</td><td>Melzi Noureddine</td><td>20541</td><td>04/02/1972</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>81</td><td>11</td><td>Mostefaoui Omar</td><td>20669</td><td>00/00/1956</td><td>Afir</td><td>وحدة الأمير عبد القادر رويبة</td></tr>
+ <tr><td>82</td><td>11</td><td>Bendaoud Abdelhalim</td><td>20870</td><td>23/12/1948</td><td>El-Harrach</td><td>حي حوش الرويبة عند ملزي</td></tr>
+ <tr><td>83</td><td>11</td><td>Belbay Ahmed</td><td>20922</td><td>14/12/1969</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>84</td><td>11</td><td>Dermouche Rachid</td><td>21096</td><td>21/02/1972</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>85</td><td>11</td><td>Laiachi Samir</td><td>21191</td><td>12/10/1972</td><td>Mohamed Belouizdad </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>86</td><td>11</td><td>Slimani Adbelatif</td><td>21193</td><td>06/01/1957</td><td>&nbsp;</td><td>وحدة الأمير عبد القادر رويبة</td></tr>
+ <tr><td>87</td><td>11</td><td>Flih Mustapha</td><td>21196</td><td>06/04/1962</td><td>berraki</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>88</td><td>11</td><td>Boulkoroum Said</td><td>21198</td><td>04/11/1972</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>89</td><td>12</td><td>Soltani Djamal</td><td>21201</td><td>13/07/1964</td><td>Sidi M'Hamed</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>90</td><td>12</td><td>Saidi Hocine</td><td>21243</td><td>09/02/1949</td><td>Djinet </td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>91</td><td>12</td><td>Saci Ahmed</td><td>21283</td><td>25/06/1967</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>92</td><td>12</td><td>Bachsais Mourad</td><td>21386</td><td>15/09/1972</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>93</td><td>12</td><td>Yassa Ahmed</td><td>21493</td><td>19/04/1964</td><td>Djinet </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>94</td><td>12</td><td>Yassa Rabah</td><td>21501</td><td>27/05/1950</td><td>Draâ El Mizan</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>95</td><td>12</td><td>Boulbadaoui Ahmed</td><td>21518</td><td>21/02/1967</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>96</td><td>12</td><td>Bouchelaghem Said</td><td>21590</td><td>10/02/1960</td><td>Zemmouri </td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>97</td><td>13</td><td>Benamrouche Youcef</td><td>21594</td><td>25/07/1966</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>98</td><td>13</td><td>Zelmati Ali</td><td>21629</td><td>00/00/1964</td><td>Beni Haoua</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>99</td><td>13</td><td>Mokeddem Mohamed</td><td>21671</td><td>01/04/1972</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>100</td><td>13</td><td>Belkasmi Rabah</td><td>21706</td><td>28/02/1972</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>101</td><td>13</td><td>Nekiche Toufik</td><td>21799</td><td>28/11/1971</td><td>Sidi M'Hamed</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>102</td><td>13</td><td>Athmani Rabah</td><td>21877</td><td>17/12/1942</td><td>Rouiba</td><td>06 حوش الرويبة</td></tr>
+ <tr><td>103</td><td>13</td><td>Medjber Abdelkader</td><td>21891</td><td>23/01/1967</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>104</td><td>13</td><td>Slimane Abdelwahab</td><td>21911</td><td>12/02/1970</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>105</td><td>14</td><td>Nekiche Djamel</td><td>21915</td><td>12/10/1968</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>106</td><td>14</td><td>Sirine Aissa</td><td>21927</td><td>25/01/1967</td><td>Aïn Bessem </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>107</td><td>14</td><td>Bouladam Hocine</td><td>21950</td><td>27/09/1960</td><td>Amira Arrès</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>108</td><td>14</td><td>Boulbadaoui Mustapha</td><td>21994</td><td>29/06/1972</td><td>Rouiba</td><td>وحدة الأمير عبد القادر رويبة</td></tr>
+ <tr><td>109</td><td>14</td><td>Ouzenadji Reda</td><td>22035</td><td>08/10/1967</td><td>El-Harrach</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>110</td><td>14</td><td>Chebila Elhadj</td><td>22065</td><td>18/12/1967</td><td>Aïn Bessem </td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>111</td><td>14</td><td>Hamza Omar</td><td>22142</td><td>08/04/1968</td><td>Bouderbala </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>112</td><td>14</td><td>Bouzini Hocine</td><td>22190</td><td>06/06/1976</td><td>Aïn Bessem </td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>113</td><td>15</td><td>Bousba Boubakeur</td><td>22210</td><td>18/01/1975</td><td>Sidi Aissa</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>114</td><td>15</td><td>Aoudia Mohamed</td><td>22217</td><td>22/06/1970</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>115</td><td>15</td><td>Bouchelaghem Djamel</td><td>22255</td><td>02/02/1976</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>116</td><td>15</td><td>Bouzini Lakhdar</td><td>22318</td><td>00/00/1975</td><td>Aïn Bessem </td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>117</td><td>15</td><td>Benamrouche Mohamed</td><td>22325</td><td>02/12/1975</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>118</td><td>15</td><td>Behlouli Bachir</td><td>22353</td><td>04/08/1968</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>119</td><td>15</td><td>Boulkoroum Mohamed</td><td>22362</td><td>17/12/1975</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>120</td><td>15</td><td>Bousba Abdelkader</td><td>22370</td><td>07/03/1949</td><td>Sidi Aissa</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>121</td><td>16</td><td>Bouteldja Toufik</td><td>22418</td><td>03/10/1974</td><td>Rouiba</td><td>مدرسة حوش الرويبة</td></tr>
+ <tr><td>122</td><td>16</td><td>Bournissa Nassredine</td><td>22434</td><td>11/03/1976</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>123</td><td>16</td><td>Belbey Hocine</td><td>22445</td><td>05/02/1973</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>124</td><td>16</td><td>Benamrouche El Hocine</td><td>22453</td><td>03/11/1968</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>125</td><td>16</td><td>Chebila Ali</td><td>22470</td><td>03/09/1974</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>126</td><td>16</td><td>Alioui Abelkrim</td><td>22484</td><td>17/04/1977</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>127</td><td>16</td><td>Ahmidouche Djillali</td><td>22489</td><td>11/11/1973</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>128</td><td>16</td><td>Abidet Hakim</td><td>22492</td><td>05/12/1976</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>129</td><td>17</td><td>Bouchelaghem Noureddine</td><td>22511</td><td>19/12/1967</td><td>Sidi M'Hamed</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>130</td><td>17</td><td>Bousba Mohamed</td><td>22530</td><td>06/10/1972</td><td>Sidi Aissa</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>131</td><td>17</td><td>Atmani Hakim</td><td>22561</td><td>21/01/1974</td><td>Rouiba</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>132</td><td>17</td><td>Benmedjadji Hakim</td><td>22571</td><td>02/01/1972</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>133</td><td>17</td><td>Amrani Madjid</td><td>22585</td><td>14/02/1975</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>134</td><td>17</td><td>Behlouli Tahar</td><td>22589</td><td>01/04/1977</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>135</td><td>17</td><td>Bahlouli Mourad</td><td>22609</td><td>19/03/1969</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>136</td><td>17</td><td>Belahcene Moussa</td><td>22669</td><td>05/01/1976</td><td>Rouiba</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>137</td><td>18</td><td>Allal Kamel</td><td>22676</td><td>15/12/1966</td><td>Bab El Oued</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>138</td><td>18</td><td>Benhaffaf Ali</td><td>22683</td><td>27/03/1976</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>139</td><td>18</td><td>Bouchelaghem Mohamed nabi</td><td>22767</td><td>13/11/1976</td><td>Rouiba</td><td>حي برانسي حوش رويبة</td></tr>
+ <tr><td>140</td><td>18</td><td>Benayad Nouredine</td><td>22773</td><td>01/01/1974</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>141</td><td>18</td><td>Cherik Sidali</td><td>22792</td><td>05/08/1973</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>142</td><td>18</td><td>Ben Amrouche Redha</td><td>22837</td><td>04/10/1974</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>143</td><td>18</td><td>Behlouli Aissa</td><td>22845</td><td>29/11/1972</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>144</td><td>18</td><td>Dahmane Lys</td><td>22880</td><td>25/09/1975</td><td>Rouiba</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>145</td><td>19</td><td>Allal Abdelkrim</td><td>22932</td><td>22/10/1969</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>146</td><td>19</td><td>Benhaffaf Omar</td><td>22939</td><td>15/01/1968</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>147</td><td>19</td><td>Belbey Smail</td><td>22957</td><td>20/01/1976</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>148</td><td>19</td><td>Hamoum Karim</td><td>22962</td><td>01/07/1972</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>149</td><td>19</td><td>Aziez Rachid</td><td>23009</td><td>01/10/1967</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>150</td><td>19</td><td>Kadi Sofiane</td><td>23042</td><td>18/12/1975</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>151</td><td>19</td><td>Aouadi Merouane</td><td>23081</td><td>07/11/1974</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>152</td><td>19</td><td>                 Bouzid</td><td>23087/23097</td><td>10/12/1956</td><td>........</td><td>&nbsp;</td></tr>
+ <tr><td>153</td><td>20</td><td>Belabbas Said</td><td>23101</td><td>12/02/1976</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>154</td><td>20</td><td>Benmazouz Mohamed</td><td>23163</td><td>16/04/1975</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>155</td><td>20</td><td>Benali Rabah</td><td>23173</td><td>15/11/1976</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>156</td><td>20</td><td>Lamari Fateh</td><td>23218</td><td>18/05/1973</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>157</td><td>20</td><td>Doudah Youcef</td><td>23219</td><td>22/07/1976</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>158</td><td>20</td><td>Gacioui Ali</td><td>23295</td><td>03/11/1975</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>159</td><td>20</td><td>Mehenni Abderrezak</td><td>23358</td><td>04/01/1976</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>160</td><td>20</td><td>Melzi Salah</td><td>23390</td><td>25/11/1974</td><td>Kouba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>161</td><td>21</td><td>Hadjali Samir</td><td>23401</td><td>13/04/1976</td><td>Bab El Oued</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>162</td><td>21</td><td>Issaad Farid</td><td>23542</td><td>13/11/1974</td><td>Rouiba</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>163</td><td>21</td><td>Issaad Mohamed</td><td>23544</td><td>06/12/1972</td><td>Rouiba</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>164</td><td>21</td><td>Khelil Azzdine</td><td>23623</td><td>16/11/1973</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>165</td><td>21</td><td>Koudri Ali</td><td>23668</td><td>06/08/1975</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>166</td><td>21</td><td>Sebai Redha</td><td>23742</td><td>03/08/1974</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>167</td><td>21</td><td>Sahouadj toufik</td><td>23754</td><td>11/04/1974</td><td>Rouiba</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>168</td><td>21</td><td>Louannas Karim</td><td>23780</td><td>20/10/1976</td><td>Rouiba</td><td>&nbsp;</td></tr>
+ <tr><td>169</td><td>22</td><td>Mammeri Mohamed</td><td>23809</td><td>02/05/1976</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>170</td><td>22</td><td>Mehenni Abdelkader</td><td>23869</td><td>04/01/1977</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>171</td><td>22</td><td>Mehenni Mustapha</td><td>23871</td><td>12/10/1972</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>172</td><td>22</td><td>Melloul Mohamed</td><td>23885</td><td>04/08/1974</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>173</td><td>22</td><td>Melloul Madjid</td><td>23887</td><td>28/06/1973</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>174</td><td>22</td><td>Melzi Abdeslam</td><td>23897</td><td>29/08/1973</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>175</td><td>22</td><td>Melzi Mohamed</td><td>23900</td><td>09/09/1972</td><td>Hussein-Dey </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>176</td><td>22</td><td>Melzi Mohamed</td><td>23901</td><td>26/09/1975</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>177</td><td>23</td><td>Mokrane Nouredine</td><td>23987</td><td>27/02/1974</td><td>Kouba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>178</td><td>23</td><td>Mostefaoui Hassen</td><td>23995</td><td>10/08/1976</td><td>Rouiba</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>179</td><td>23</td><td>Menna Nesig Mustapha</td><td>24063</td><td>03/02/1977</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>180</td><td>23</td><td>Nekieche Ali</td><td>24067</td><td>11/11/1948</td><td>&nbsp;</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>181</td><td>23</td><td>Nekieche Brahim</td><td>24068</td><td>19/08/1970</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>182</td><td>23</td><td>Rahli Djamel</td><td>24143</td><td>13/12/1973</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>183</td><td>23</td><td>Rahli Lotfi</td><td>24144</td><td>23/12/1976</td><td>Bordj El Kiffan</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>184</td><td>23</td><td>toubal Djamal</td><td>24146</td><td>14/06/1974</td><td>Rouiba</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>185</td><td>24</td><td>Rekkas Sofiane</td><td>24175</td><td>09/09/1975</td><td>Aïn Taya</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>186</td><td>24</td><td>Safsaf Mustapha</td><td>24198</td><td>17/05/1976</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>187</td><td>24</td><td>Sefsaf Rabah</td><td>24221</td><td>25/05/1970</td><td>Tidjelabine</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>188</td><td>24</td><td>Sahouadj Aissa</td><td>24223</td><td>06/06/1972</td><td>Rouiba</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>189</td><td>24</td><td>Si Ahmed Noureddine</td><td>24236</td><td>00/00/1961</td><td>Djinet </td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>190</td><td>24</td><td>Sassi Aissa</td><td>24251</td><td>07/12/1972</td><td>El Kouif</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>191</td><td>24</td><td>Sefsaf Mohamed</td><td>24263</td><td>14/01/1977</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>192</td><td>24</td><td>Sellaoui samir</td><td>24279</td><td>12/07/1976</td><td>Rouiba</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>193</td><td>25</td><td>Slimane Farouk</td><td>24309</td><td>07/12/1974</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>194</td><td>25</td><td>Youcefi Azouz</td><td>24322</td><td>09/04/1977</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>195</td><td>25</td><td>Zbib Hamid</td><td>24332</td><td>26/02/1976</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>196</td><td>25</td><td>Taleb Youcef</td><td>24366</td><td>20/09/1974</td><td>Mohamed Belouizdad </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>197</td><td>25</td><td>Tamahloulet Abdelkader</td><td>24367</td><td>31/12/1968</td><td>Chlef</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>198</td><td>25</td><td>Zamoum Ismail</td><td>24420</td><td>24/02/1971</td><td>Ouadhia</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>199</td><td>25</td><td>Zamoum Lakhdar</td><td>24421</td><td>12/03/1974</td><td>Chlef</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>200</td><td>25</td><td>Mostefaoui Boualem</td><td>24494</td><td>22/12/1976</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>201</td><td>26</td><td>Bellal Abdelmalek</td><td>24497</td><td>17/04/1967</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>202</td><td>26</td><td>Bousba Tayeb</td><td>24549</td><td>22/03/1977</td><td>Sidi Aissa</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>203</td><td>26</td><td>Touati Mohamed</td><td>24564</td><td>25/03/1977</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>204</td><td>26</td><td>Medjber Rabah</td><td>24610</td><td>15/09/1976</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>205</td><td>26</td><td>Koudri Slimane</td><td>24618</td><td>01/12/1948</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>206</td><td>26</td><td>Aiteche Rezki</td><td>24632</td><td>11/11/1968</td><td>Dar El Beïda</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>207</td><td>26</td><td>Aligui Omar</td><td>24649</td><td>25/02/1975</td><td>Aïn Bessem </td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>208</td><td>26</td><td>Berkane Omar</td><td>24669</td><td>02/03/1976</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>209</td><td>27</td><td>Meguisba Mustapha</td><td>24674</td><td>23/10/1975</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>210</td><td>27</td><td>Melzi Mohamed Seghir</td><td>24770</td><td>13/03/1976</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>211</td><td>27</td><td>Ben Sitouah Abdelkrim</td><td>24772</td><td>10/01/1977</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>212</td><td>27</td><td>Dendaoui Lyazid</td><td>24801</td><td>22/04/1977</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>213</td><td>27</td><td>Meguisba Mohamed</td><td>24802</td><td>24/02/1975</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>214</td><td>27</td><td>Toutah Tarik</td><td>24808</td><td>24/08/1976</td><td>Oran</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>215</td><td>27</td><td>Kelious Nabil</td><td>25061</td><td>08/03/1975</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>216</td><td>27</td><td>Hider Redouane</td><td>25065</td><td>04/06/1976</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>217</td><td>28</td><td>Hadjari Said</td><td>25126</td><td>04/04/1973</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>218</td><td>28</td><td>Hamoum Sofiane</td><td>25142</td><td>28/03/1977</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>219</td><td>28</td><td>Boukabous Omar</td><td>25324</td><td>04/06/1974</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>220</td><td>28</td><td>Guettache Madjid</td><td>25326</td><td>16/03/1976</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>221</td><td>28</td><td>Kherbachi Ahmed</td><td>25341</td><td>22/06/1977</td><td>Medjedel</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>222</td><td>28</td><td>Guettache Chafik</td><td>25414</td><td>13/03/1977</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>223</td><td>28</td><td>Koudri Sofiane</td><td>25429</td><td>13/02/1977</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>224</td><td>28</td><td>Benaissa Rachid</td><td>25480</td><td>04/03/1975</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>225</td><td>29</td><td>Bousba Mourad</td><td>25508</td><td>24/08/1977</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>226</td><td>29</td><td>Bougaba Ali</td><td>25548</td><td>05/04/1964</td><td>Djinet </td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>227</td><td>29</td><td>Hamouda Salah</td><td>25590</td><td>12/03/1970</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>228</td><td>29</td><td>Berkane Rabah</td><td>25712</td><td>02/11/1973</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>229</td><td>29</td><td>Bellache Mohamed</td><td>25752</td><td>31/12/1953</td><td>Blida</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>230</td><td>29</td><td>Yassa Boualem</td><td>25775</td><td>01/12/1975</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>231</td><td>29</td><td>Bessekri Mohamed</td><td>25776</td><td>25/02/1953</td><td>Guerrouma </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>232</td><td>29</td><td>Yassa Salah</td><td>25777</td><td>13/09/1972</td><td>Tizi Ouzou</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>233</td><td>30</td><td>Berkane Mohamed</td><td>25840</td><td>13/12/1971</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>234</td><td>30</td><td>Bousba Bouziane</td><td>25892</td><td>17/04/1959</td><td>Sidi Aissa</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>235</td><td>30</td><td>Behlouli Moussa</td><td>25893</td><td>25/02/1975</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>236</td><td>30</td><td>Zamoum Mahfoud</td><td>25959</td><td>02/10/1977</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>237</td><td>30</td><td>Chebila Zoheir</td><td>25973</td><td>06/07/1977</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>238</td><td>30</td><td>Hamouda Boualem</td><td>25987</td><td>03/03/1975</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>239</td><td>30</td><td>Nebhi Ali</td><td>26042</td><td>17/12/1975</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>240</td><td>30</td><td>Ouada Mohamed</td><td>26048</td><td>22/04/1973</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>241</td><td>31</td><td>Taleb Abdelkrim</td><td>26107</td><td>10/10/1965</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>242</td><td>31</td><td>Yassa Mustapha</td><td>26129</td><td>28/05/1974</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>243</td><td>31</td><td>Berkane Amine</td><td>26147</td><td>20/03/1977</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>244</td><td>31</td><td>Boulechbak Rachid</td><td>26181</td><td>28/03/1966</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>245</td><td>31</td><td>Bouzidi Larbi</td><td>26205</td><td>00/00/1961</td><td>Chehaima  </td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>246</td><td>31</td><td>Aouis Fatima</td><td>26296</td><td>27/09/1976</td><td>Aïn Taya</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>247</td><td>31</td><td>Deriche Farouk</td><td>26362</td><td>26/09/1974</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>248</td><td>31</td><td>Berkane Said</td><td>26455</td><td>21/04/1960</td><td>berraki</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>249</td><td>32</td><td>Bacha Mohamed</td><td>26512</td><td>19/04/1961</td><td>Tizi Ouzou</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>250</td><td>32</td><td>Djemai Zouheir</td><td>26522</td><td>08/08/1973</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>251</td><td>32</td><td>Dif Azeddine</td><td>26654</td><td>04/06/1977</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>252</td><td>32</td><td>Benali Farid</td><td>26699</td><td>24/03/1974</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>253</td><td>32</td><td>Bensitouah Rda</td><td>26759</td><td>24/08/1975</td><td>Bordj El Kiffan</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>254</td><td>32</td><td>Bead Omar ben Ahmed</td><td>26784</td><td>21/05/1969</td><td>Bouira</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>255</td><td>32</td><td>Bouabdellah Farid</td><td>26799</td><td>06/04/1977</td><td>Hussein-Dey </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>256</td><td>32</td><td>Hamouda Ayache</td><td>26886</td><td>12/01/1975</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>257</td><td>33</td><td>Bachsais Omar</td><td>26896</td><td>02/09/1972</td><td>Sidi M'Hamed</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>258</td><td>33</td><td>Setil Badredine</td><td>26903</td><td>21/05/1967</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>259</td><td>33</td><td>Bousba Benyoucef</td><td>26957</td><td>01/02/1934</td><td>Sidi Aissa</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>260</td><td>33</td><td>Boudhar Samir</td><td>27071</td><td>21/07/1977</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>261</td><td>33</td><td>Berkane Abdenour</td><td>27168</td><td>05/06/1968</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>262</td><td>33</td><td>Fekraoui Mekki</td><td>27231</td><td>01/12/1960</td><td>Terrai Bainen</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>263</td><td>33</td><td>Haddouche Redouane</td><td>27344</td><td>02/08/1973</td><td>Hussein-Dey </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>264</td><td>33</td><td>Issaad Riad</td><td>27481</td><td>05/04/1977</td><td>Rouiba</td><td>حي 70 مسكن حوش الرويبة0 حي الأزهار حوش الرويبة</td></tr>
+ <tr><td>265</td><td>34</td><td>Rahli Mourad</td><td>27574</td><td>06/04/1968</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>266</td><td>34</td><td>Larbi bacha Ali</td><td>27671</td><td>30/04/1968</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>267</td><td>34</td><td>Lekkat Kamel</td><td>27697</td><td>21/12/1960</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>268</td><td>34</td><td>Meguisba Mostefa</td><td>27808</td><td>11/03/1976</td><td>Medjedel</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>269</td><td>34</td><td>Melzi Mahdi</td><td>27848</td><td>30/07/1977</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>270</td><td>34</td><td>Melzi Yacine</td><td>27951</td><td>05/10/1973</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>271</td><td>34</td><td>Mesbah Ali</td><td>27867</td><td>27/03/1975</td><td>Blida</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>272</td><td>34</td><td>Mostefaoui Fatah</td><td>27925</td><td>04/07/1974</td><td>Rouiba</td><td>حي 70 مسكن حوش الرويبة0 حي الأزهار حوش الرويبة</td></tr>
+ <tr><td>273</td><td>35</td><td>Mouaci Djamel</td><td>27932</td><td>10/02/1966</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>274</td><td>35</td><td>Reguieg Said</td><td>28103</td><td>20/11/1972</td><td>Sidi M'Hamed</td><td>حي 70 مسكن حوش الرويبة0 حي الأزهار حوش الرويبة</td></tr>
+ <tr><td>275</td><td>35</td><td>Toubal Azddine</td><td>28164</td><td>29/04/1969</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>276</td><td>35</td><td>Sebai Noureddine</td><td>28107</td><td>10/01/1966</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>277</td><td>35</td><td>Zanouni Youcef</td><td>28196</td><td>6/61976</td><td>Medjedel</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>278</td><td>35</td><td>Ziani Khaled</td><td>28226</td><td>02/06/1976</td><td>Bab El Oued</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>279</td><td>35</td><td>Yahi Brahim</td><td>28292</td><td>10/02/1973</td><td>Rouiba</td><td>حي الأزهار حي 70 مسكن</td></tr>
+ <tr><td>280</td><td>35</td><td>Ziani Chakir</td><td>28340</td><td>12/12/1972</td><td>Bab El Oued</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>281</td><td>36</td><td>Mekhfi Omar</td><td>28362</td><td>13/03/1962</td><td>Sidi M'Hamed</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>282</td><td>36</td><td>Berrahmoune Rabah</td><td>28433</td><td>26/04/1976</td><td>Guerrouma </td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>283</td><td>36</td><td>Deriche Farid</td><td>28440</td><td>31/08/1978</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>284</td><td>36</td><td>Djendel Mahrez</td><td>28480</td><td>06/04/1975</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>285</td><td>36</td><td>Laidoudi Said</td><td>92700</td><td>25/02/1981</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>286</td><td>36</td><td>Boudinar Hichem</td><td>917054</td><td>09/02/1982</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>287</td><td>36</td><td>Bousba Kamel</td><td>917060</td><td>02/04/1986</td><td>Rouiba</td><td>حي 70 مسكن حوش الرويبة</td></tr>
+ <tr><td>288</td><td>36</td><td>Boudjlid Khaled</td><td>917712</td><td>04/01/1988</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>289</td><td>37</td><td>Alioui Kamel</td><td>917776</td><td>01/04/1982</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>290</td><td>37</td><td>Boudinar Azzeddine</td><td>918097</td><td>03/08/1987</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>291</td><td>37</td><td>Slimani Farid</td><td>923080</td><td>29/04/1978</td><td>Mouzaïa </td><td>حي الصنوبر حوش الرويبة</td></tr>
+ <tr><td>292</td><td>37</td><td>Bendaoui Kamel</td><td>923457</td><td>29/12/1984</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>293</td><td>37</td><td>Rahmouni Ahmed Adberrahmane</td><td>923526</td><td>31/12/1998</td><td>Aïn Taya</td><td>حي 70 مسكن حوش الرويبة0 حي الأزهار حوش الرويبة</td></tr>
+ <tr><td>294</td><td>37</td><td>Anni Brahim</td><td>923553</td><td>14/10/1973</td><td>Tablat </td><td>التعاونية العقارية الصنوبر</td></tr>
+ <tr><td>295</td><td>37</td><td>Alioui Salim</td><td>923663</td><td>26/10/1995</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>296</td><td>37</td><td>Mesroua Rachid</td><td>923701</td><td>04/05/1962</td><td>El-Harrach</td><td>ت ع الصنوبر رقم مزرعة شعيب محمد7 الرويبة</td></tr>
+ <tr><td>297</td><td>38</td><td>Merssaoui Nabil</td><td>923735</td><td>06/04/1996</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>298</td><td>38</td><td>Youcefi Seddik</td><td>923741</td><td>21/07/1981</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>299</td><td>38</td><td>Dendani Lakhder</td><td>923746</td><td>27/06/1987</td><td>El-Harrach</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>300</td><td>38</td><td>Hamzaoui Mohamed-amine</td><td>923928</td><td>14/06/1986</td><td>Rouiba</td><td>حي 70 مسكن حوش الرويبة0 حي الأزهار حوش الرويبة</td></tr>
+ <tr><td>301</td><td>38</td><td>Aarab Reda</td><td>923945</td><td>17/05/1978</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>302</td><td>38</td><td>Nait-Atmane Adbel-hakim</td><td>926976</td><td>11/10/1986</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>303</td><td>38</td><td>Sadek Ayoub</td><td>926977</td><td>24/04/1998</td><td>Hussein-Dey </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>304</td><td>38</td><td>Slimane Mohand</td><td>926980</td><td>24/08/1987</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>305</td><td>39</td><td>Laidoudi Sidali</td><td>926997</td><td>18/12/1982</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>306</td><td>39</td><td>Laiachi Mohamed</td><td>927962</td><td>17/01/1975</td><td>Mohamed Belouizdad </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>307</td><td>39</td><td>Laiachi Farok</td><td>927964</td><td>07/05/1978</td><td>Kenadsa </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>308</td><td>39</td><td>Hamzaoui Said</td><td>927990</td><td>27/11/1982</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>309</td><td>39</td><td>Mostefaoui Youcef</td><td>928263</td><td>03/03/1990</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>310</td><td>39</td><td>Dahmane Tarek</td><td>928338</td><td>07/04/1977</td><td>Rouiba</td><td>حي 70 مسكن حوش الرويبة0 حي الأزهار حوش الرويبة</td></tr>
+ <tr><td>311</td><td>39</td><td>Belal Amir</td><td>928552</td><td>02/07/1990</td><td>Souhane </td><td>حي 70 مسكن حوش الرويبة0 حي الأزهار حوش الرويبة</td></tr>
+ <tr><td>312</td><td>39</td><td>Zbib Brahim</td><td>928713</td><td>01/08/1971</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>313</td><td>40</td><td>Sassane Hamid</td><td>930805</td><td>10/12/1994</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>314</td><td>40</td><td>Sassane Rabah</td><td>930806</td><td>04/11/1988</td><td>Tablat </td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>315</td><td>40</td><td>Sassane Lies</td><td>930807</td><td>31/08/1986</td><td>Tablat </td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>316</td><td>40</td><td>Boughoufala Mohamed adberraouf</td><td>931142</td><td>23/10/1999</td><td>Rouiba</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>317</td><td>40</td><td>Arezki Abdellah</td><td>931154</td><td>24/10/1998</td><td>Aïn Taya</td><td>التعاونية العقارية الزهور رق</td></tr>
+ <tr><td>318</td><td>40</td><td>Khalfi M'hammed</td><td>931529</td><td>11/05/1992</td><td>Tablat </td><td>ت ع الصنوبر رقم مزرعة شعيب محمد5 الرويبة</td></tr>
+ <tr><td>319</td><td>40</td><td>Lassaq Abderrezak</td><td>931533</td><td>18/02/1982</td><td>Dar El Beïda</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>320</td><td>40</td><td>Azizi Abderraouf</td><td>931635</td><td>10/12/2001</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>321</td><td>41</td><td>Boualem Slimane</td><td>931827</td><td>10/09/1967</td><td>Djinet </td><td>حي الصنوبر حوش الرويبة</td></tr>
+ <tr><td>322</td><td>41</td><td>Bouguerra Abdelkrim</td><td>932194</td><td>15/04/1972</td><td>Souagui</td><td>حي 70 مسكن حوش الرويبة7 حي برانسي حوش الرويبة</td></tr>
+ <tr><td>323</td><td>41</td><td>Bouguerra Djelloul</td><td>932195</td><td>10/07/2001</td><td>Réghaïa </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>324</td><td>41</td><td>Beninal brahim</td><td>932676</td><td>21/02/1983</td><td>Aïn Bessem </td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>325</td><td>41</td><td>Boumhira Abdelkader</td><td>932771</td><td>01/01/1994</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>326</td><td>41</td><td>Toutah Mohamed</td><td>21090045884</td><td>11/04/1988</td><td>Aïn Taya</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>327</td><td>41</td><td>Koudri Oussama</td><td>21090474946</td><td>19/01/2002</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>328</td><td>41</td><td>Bouzini Abdenour</td><td>21090523380</td><td>09/12/2000</td><td>Aïn Taya</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>329</td><td>42</td><td>Benamrouche Ahmed</td><td>21090691110</td><td>03/01/1995</td><td>Réghaïa</td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>330</td><td>42</td><td>Hamoum Salim</td><td>21090708019</td><td>24/10/1978</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>331</td><td>42</td><td>Koudri Ali</td><td>21090732604</td><td>16/05/1996</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>332</td><td>42</td><td>Hamoum Nasreddine</td><td>21090732619</td><td>04/08/1996</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>333</td><td>42</td><td>Loucif Elhoucine</td><td>23010173162</td><td>12/05/1971</td><td>Ouled Sellam </td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>334</td><td>42</td><td>Melloul Billel</td><td>23010290894</td><td>18/02/2002</td><td>Rouiba</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>335</td><td>42</td><td>Chiheb Ammar</td><td>24010174548</td><td>20/07/1968</td><td>El Hamiz </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>336</td><td>42</td><td>Benali Said</td><td>24010192529</td><td>00/00/1959</td><td>Aïn Bessem </td><td>مزرعة شعيب محمد</td></tr>
+ <tr><td>337</td><td>43</td><td>Chiheb Yakoub</td><td>24010268922</td><td>02/05/2006</td><td>Aïn Taya</td><td>حي حوش الرويبة</td></tr>
+ <tr><td>338</td><td>43</td><td>Boubakeur Ali</td><td>24010295846</td><td>24/06/1978</td><td>Mihoub  </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>339</td><td>43</td><td>Drali Bachir</td><td>24010448117</td><td>01/07/1943</td><td>Boudouaou </td><td>حي حوش الرويبة</td></tr>
+ <tr><td>340</td><td>43</td><td>Bakhti Noureddine</td><td>24010595920</td><td>19/01/1981</td><td>Feidh el Botma</td><td>حي حوش الرويبة</td></tr>
+</tbody></table>
+
+<script src="script.js"></script>
+
+</body>
+</html>
