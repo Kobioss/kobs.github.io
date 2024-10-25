@@ -2,10 +2,6 @@
   box-sizing: border-box;
 }
 
-#bod {
-	width: 50%;
-}
-
 #myInput {
   background-image: url('search.png');
   background-position: 10px 10px;
