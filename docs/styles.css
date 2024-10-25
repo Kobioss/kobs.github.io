@@ -2,6 +2,15 @@
   box-sizing: border-box;
 }
 
+#contact, #centre {
+	display: inline-block;
+}
+
+#contact {
+	margin-left: 100px;
+	vertical-align: 30px;
+}
+
 #myInput {
   background-image: url('search.png');
   background-position: 10px 10px;
