@@ -19,13 +19,19 @@
 <input class="popup-contenu" id="Button1" type="button" value="Ok" onclick="passcheck()" />
 </div>
 
-<div id="compteur">
-<label>Vote&nbsp;&nbsp;&nbsp;</label>
-<button onclick="count(this.id)" id="minus">-</button>
-<label id="counter">0</label>
-<button onclick="count(this.id)" id="plus">+</button>
-<button onclick="save(this.id)" id="save" title="Un fichier sera télécharger.">Enregistrer</button>
-<!-- <button onclick="restore(this.id)" id="restore">Restaurer</button> -->
+<div id="haut">
+	<div id="compteur">
+	<label>Vote&nbsp;&nbsp;&nbsp;</label>
+	<button onclick="count(this.id)" id="minus">-</button>
+	<label id="counter">0</label>
+	<button onclick="count(this.id)" id="plus">+</button>
+	<button onclick="save(this.id)" id="save" title="Un fichier sera télécharger.">Enregistrer</button>
+	<!-- <button onclick="restore(this.id)" id="restore">Restaurer</button> -->
+	</div>
+
+	<div id="compteur-site" title="compteur site">
+	<img src="https://counter6.optistats.ovh/private/compteurdevisite.php?c=b12y3tjp3j24tmjtw79xjq966b1kkm9g" 
+	border="0" title="compteur" alt="compteur"></div>
 </div>
 
 <script src="https://static.elfsight.com/platform/platform.js" async></script>
