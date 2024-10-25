@@ -2,6 +2,19 @@
   box-sizing: border-box;
 }
 
+#compteur, #compteur-site {
+	display: inline-block;
+	vertical-align: top;
+}
+
+#haut {
+	margin-left: 40%;
+}
+
+#compteur-site {
+	margin-left: 50%;
+}
+
 #contact, #centre {
 	display: inline-block;
 }
